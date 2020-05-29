@@ -31,6 +31,7 @@ import (
 	"github.com/gohugoio/hugo/markup/converter"
 	"github.com/gohugoio/hugo/markup/highlight"
 	"github.com/gohugoio/hugo/markup/tableofcontents"
+	mathjax "github.com/litao91/goldmark-mathjax"
 	"github.com/yuin/goldmark"
 	hl "github.com/yuin/goldmark-highlighting"
 	"github.com/yuin/goldmark/extension"
@@ -105,6 +106,10 @@ func newMarkdown(pcfg converter.ProviderConfig) goldmark.Markdown {
 
 	if mcfg.Highlight.CodeFences {
 		extensions = append(extensions, newHighlighting(mcfg.Highlight))
+	}
+
+	if cfg.Extensions.MathJax {
+		extensions = append(extensions, mathjax.MathJax)
 	}
 
 	if cfg.Extensions.Table {

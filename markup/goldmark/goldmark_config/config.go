@@ -26,6 +26,7 @@ var Default = Config{
 		Typographer:    true,
 		Footnote:       true,
 		DefinitionList: true,
+		MathJax:  		true,
 		Table:          true,
 		Strikethrough:  true,
 		Linkify:        true,
@@ -52,6 +53,7 @@ type Extensions struct {
 	Typographer    bool
 	Footnote       bool
 	DefinitionList bool
+	MathJax        bool
 
 	// GitHub flavored markdown
 	Table         bool
